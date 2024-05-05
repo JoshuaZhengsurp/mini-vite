@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <noscript>oop!!! your brower don't support script, sorry</noscript>
+    <script>
+      window.process = {
+        env: {
+          NODE_ENV: "dev",
+        },
+      };
+
+      function updateStyle(content) {
+        const isExist = typeof CSSStyleSheet !== undefined;
+        if (isExist) {
+          let cssStyleSheet = new CSSStyleSheet();
+          cssStyleSheet.replaceSync(content);
+          document.adoptedStyleSheets = [
+            ...document.adoptedStyleSheets,
+            cssStyleSheet,
+          ];
+        } else {
+          let style = document.createElement("style");
+          style.setAttribute("type", "text/css");
+          style.innerHTML = content;
+          document.head.appendChild(style);
+        }
+      }
+    </script>
+    <script src="/main.js" type="module"></script>
+  </body>
+</html>

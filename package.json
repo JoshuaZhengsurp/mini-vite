@@ -1,0 +1,17 @@
+{
+  "name": "mini-vite",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon mini-vite",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "JoshuaZhengsurp",
+  "license": "MIT",
+  "dependencies": {
+    "koa": "^2.15.3",
+    "vue": "^3.4.26"
+  }
+}
